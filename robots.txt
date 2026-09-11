@@ -15,3 +15,4 @@ Allow: /
 
 Sitemap: https://pranav-dwivedi.pages.dev/sitemap.xml
 LLM: https://pranav-dwivedi.pages.dev/llms.txt
+LLM-Full: https://pranav-dwivedi.pages.dev/llms-full.txt

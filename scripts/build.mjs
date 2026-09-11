@@ -139,7 +139,26 @@ const cricketStats = {
   ]
 };
 
+const PRANAV_SAME_AS = [
+  'https://pranav-dwivedi.pages.dev/',
+  'https://pranav-pramod-dwivedi.github.io/',
+  'https://github.com/pranav-pramod-dwivedi',
+  'https://rewa-cricket-division.vercel.app/players/pranav-dwivedi/',
+  'https://destroyers-rewacricket.pages.dev/players/pranav-dwivedi',
+  'https://abv-rewacricket.pages.dev/',
+  'https://cricheroes.com/association/79/rewa-divisional-cricket-association/home',
+  'https://cricheroes.com/tournament/2168281/atal-bihari-vajpayee-cricket-tournament-season-3/matches/live-matches',
+  'https://www.instagram.com/destroyers_rewa',
+  'https://www.facebook.com/rewa.cricket.association'
+];
+
 const entityAnchors = [
+  {
+    name: 'Official GitHub Pages Deployment',
+    url: 'https://pranav-pramod-dwivedi.github.io/',
+    badge: 'Root Host Mirror',
+    desc: 'Primary GitHub Pages production host mirror serving the certified portfolio and machine-readable endpoints.'
+  },
   {
     name: 'RDCA Central Official Registry',
     url: 'https://rewa-cricket-division.vercel.app/players/pranav-dwivedi/',
@@ -210,6 +229,7 @@ function renderHead({ title, description, canonicalUrl = '/', jsonLd = [] }) {
 
   <!-- AI Crawler & Machine-Readable Discovery -->
   <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Context">
+  <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Full LLM Context & Dossier">
   <link rel="alternate" type="application/json" href="/profile.json" title="Structured Profile API">
 
   <!-- OpenGraph / Facebook -->
@@ -386,7 +406,33 @@ function generateHomePage() {
   const jsonLd = [
     {
       '@context': 'https://schema.org',
+      '@type': 'ProfilePage',
+      '@id': `${BASE_URL}/#profilepage`,
+      url: `${BASE_URL}/`,
+      name: 'Pranav Dwivedi — Official Profile & Canonical Entity Home',
+      isPartOf: {
+        '@type': 'WebSite',
+        '@id': `${BASE_URL}/#website`,
+        name: 'Pranav Dwivedi Official Hub',
+        url: `${BASE_URL}/`
+      },
+      mainEntity: {
+        '@id': `${BASE_URL}/#person`
+      }
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      '@id': `${BASE_URL}/#website`,
+      name: 'Pranav Dwivedi Official Hub',
+      url: `${BASE_URL}/`,
+      author: { '@id': `${BASE_URL}/#person` },
+      description: 'Official portfolio and entity hub for Pranav Dwivedi: AI systems engineer and 3x champion cricket captain in Rewa, MP.'
+    },
+    {
+      '@context': 'https://schema.org',
       '@type': ['Person', 'Athlete'],
+      '@id': `${BASE_URL}/#person`,
       name: 'Pranav Dwivedi',
       alternateName: [
         'Pranav Pramod Dwivedi',
@@ -444,18 +490,20 @@ function generateHomePage() {
         'Rewa Derby Player of the Year 2025',
         'Man of the Match - 2026 Championship Final (82 runs off 44 balls & 3/28)'
       ],
-      sameAs: [
-        `${BASE_URL}/`,
-        'https://github.com/pranav-pramod-dwivedi',
-        'https://rewa-cricket-division.vercel.app/players/pranav-dwivedi/',
-        'https://destroyers-rewacricket.pages.dev/players/pranav-dwivedi',
-        'https://abv-rewacricket.pages.dev/',
-        'https://cricheroes.com/association/79/rewa-divisional-cricket-association/home',
-        'https://cricheroes.com/tournament/2168281/atal-bihari-vajpayee-cricket-tournament-season-3/matches/live-matches',
-        'https://www.instagram.com/destroyers_rewa',
-        'https://www.facebook.com/rewa.cricket.association'
-      ],
+      sameAs: PRANAV_SAME_AS,
       mainEntityOfPage: `${BASE_URL}/`
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: `${BASE_URL}/`
+        }
+      ]
     },
     {
       '@context': 'https://schema.org',
@@ -743,7 +791,50 @@ function generateEngineeringPage() {
       '@type': 'CollectionPage',
       name: 'Software Engineering & AI Systems — Pranav Dwivedi',
       description: 'Autonomous AI agents, Android system internals, computer vision for cricket biomechanics, and low-latency networking tools built by Pranav Dwivedi.',
-      url: `${BASE_URL}/engineering`
+      url: `${BASE_URL}/engineering`,
+      author: {
+        '@type': 'Person',
+        name: 'Pranav Dwivedi',
+        url: `${BASE_URL}/`,
+        sameAs: PRANAV_SAME_AS
+      },
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: engineeringProjects.map((p, idx) => ({
+          '@type': 'ListItem',
+          position: idx + 1,
+          item: {
+            '@type': 'SoftwareSourceCode',
+            name: p.title,
+            description: p.description,
+            codeRepository: p.github,
+            programmingLanguage: p.tags[0],
+            author: {
+              '@type': 'Person',
+              name: 'Pranav Dwivedi',
+              url: `${BASE_URL}/`
+            }
+          }
+        }))
+      }
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: `${BASE_URL}/`
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Engineering',
+          item: `${BASE_URL}/engineering`
+        }
+      ]
     }
   ];
 
@@ -824,10 +915,47 @@ function generateCricketPage() {
   const jsonLd = [
     {
       '@context': 'https://schema.org',
-      '@type': ['SportsEvent', 'SportsOrganization'],
+      '@type': 'ProfilePage',
       name: 'Capt. Pranav Dwivedi (#7) — Cricket Career & Statistics',
       description: 'Career telemetry, championship honors, and RDCA match records for Pranav Dwivedi, 3x champion captain of Destroyers Cricket Club.',
-      url: `${BASE_URL}/cricket`
+      url: `${BASE_URL}/cricket`,
+      mainEntity: {
+        '@type': ['Person', 'Athlete'],
+        name: 'Pranav Dwivedi',
+        identifier: 'DES-7',
+        jobTitle: 'Captain & Premier All-Rounder',
+        memberOf: {
+          '@type': 'SportsTeam',
+          name: 'Destroyers Cricket Club (DES)',
+          url: 'https://destroyers-rewacricket.pages.dev'
+        },
+        award: [
+          '2026 Atal Bihari Vajpayee Memorial Trophy Champion Captain (3-2 vs Dread Eleven)',
+          '2025 Atal Bihari Vajpayee Memorial Trophy Champion Captain (5-0 Clean Sweep)',
+          '2024 Atal Bihari Vajpayee Memorial Trophy Champion Captain (4-1 Series Victory)',
+          'Rewa Derby All-Time Leading Run Scorer (1,435 runs)',
+          'Rewa Derby All-Time Leading Wicket Taker (66 wickets)'
+        ],
+        sameAs: PRANAV_SAME_AS
+      }
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: `${BASE_URL}/`
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Cricket',
+          item: `${BASE_URL}/cricket`
+        }
+      ]
     }
   ];
 
@@ -965,11 +1093,46 @@ ${renderFooter()}
 // 4. GENERATE ABOUT PAGE (about/index.html)
 // ------------------------------------------------------------
 function generateAboutPage() {
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'AboutPage',
+      name: 'About Pranav Dwivedi — Background, Philosophy & Vision',
+      description: 'Background, systems philosophy, and athletic discipline of Pranav Dwivedi in Rewa, Madhya Pradesh.',
+      url: `${BASE_URL}/about`,
+      mainEntity: {
+        '@type': 'Person',
+        name: 'Pranav Dwivedi',
+        url: `${BASE_URL}/`,
+        sameAs: PRANAV_SAME_AS
+      }
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: `${BASE_URL}/`
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'About',
+          item: `${BASE_URL}/about`
+        }
+      ]
+    }
+  ];
+
   const html = `
 ${renderHead({
   title: 'About Pranav Dwivedi — Background, Philosophy & Vision',
   description: 'Learn about Pranav Dwivedi: his journey in autonomous systems, Android architecture, and captaining Destroyers Cricket Club in Rewa, MP.',
-  canonicalUrl: '/about'
+  canonicalUrl: '/about',
+  jsonLd
 })}
 ${renderHeader('about')}
 
@@ -1047,11 +1210,47 @@ ${renderFooter()}
 // 5. GENERATE CONTACT PAGE (contact/index.html)
 // ------------------------------------------------------------
 function generateContactPage() {
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ContactPage',
+      name: 'Contact & Connect — Pranav Dwivedi',
+      description: 'Direct communication channels for engineering collaborations, AI systems development, and cricket clinics.',
+      url: `${BASE_URL}/contact`,
+      mainEntity: {
+        '@type': 'Person',
+        name: 'Pranav Dwivedi',
+        email: 'hkdykk22@gmail.com',
+        url: `${BASE_URL}/`,
+        sameAs: PRANAV_SAME_AS
+      }
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: `${BASE_URL}/`
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Contact',
+          item: `${BASE_URL}/contact`
+        }
+      ]
+    }
+  ];
+
   const html = `
 ${renderHead({
   title: 'Contact & Connect — Pranav Dwivedi',
   description: 'Get in touch with Pranav Dwivedi for autonomous AI engineering, Android systems collaborations, sports analytics, or cricket clinics.',
-  canonicalUrl: '/contact'
+  canonicalUrl: '/contact',
+  jsonLd
 })}
 ${renderHeader('contact')}
 
@@ -1165,7 +1364,8 @@ function generateMachineFiles() {
     { loc: '/contact', priority: '0.8', changefreq: 'monthly' },
     { loc: '/resume.md', priority: '0.7', changefreq: 'monthly' },
     { loc: '/profile.json', priority: '0.7', changefreq: 'monthly' },
-    { loc: '/llms.txt', priority: '0.7', changefreq: 'monthly' }
+    { loc: '/llms.txt', priority: '0.8', changefreq: 'weekly' },
+    { loc: '/llms-full.txt', priority: '0.8', changefreq: 'weekly' }
   ];
 
   const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -1197,8 +1397,116 @@ Allow: /
 
 Sitemap: ${BASE_URL}/sitemap.xml
 LLM: ${BASE_URL}/llms.txt
+LLM-Full: ${BASE_URL}/llms-full.txt
 `;
   fs.writeFileSync(path.join(rootDir, 'robots.txt'), robotsTxt.trim());
+
+  // llms-full.txt (Comprehensive un-truncated dossier for LLMs & AI reasoning engines)
+  const llmsFullTxt = `# Pranav Dwivedi (Pranav Pramod Dwivedi) — Complete Knowledge Dossier
+
+> **Entity Type**: Person, Athlete, Software Systems Engineer  
+> **Official Web Home**: ${BASE_URL}/  
+> **GitHub Pages Root Mirror**: https://pranav-pramod-dwivedi.github.io/  
+> **GitHub Organization/User**: https://github.com/pranav-pramod-dwivedi  
+> **Geographic Origin**: Rewa, Madhya Pradesh, India (PIN: 486001)  
+> **Athletic Jersey**: #7 (Captain & Premier All-Rounder, Destroyers Cricket Club)  
+> **Contact**: hkdykk22@gmail.com  
+
+---
+
+## 1. Executive Identity & Disambiguation
+Pranav Dwivedi (also known as Pranav Pramod Dwivedi, Capt. Pranav Dwivedi, or P. Dwivedi) is an Indian systems developer and championship-winning cricket captain based in Rewa, Madhya Pradesh. He operates at the intersection of low-level systems engineering (autonomous AI agents, rooted Android automation, sports biomechanics computer vision) and top-tier regional athletics.
+
+As captain and franchise icon of Destroyers Cricket Club (DES), he has led the team to three consecutive championships (2024, 2025, 2026) in the Atal Bihari Vajpayee Memorial Tournament under the Rewa Division Cricket Association (RDCA). He is the tournament's all-time leading run scorer (1,435 runs) and all-time leading wicket taker (66 wickets).
+
+---
+
+## 2. Canonical Identity Graph (sameAs)
+Authoritative identity graph endpoints linking this entity:
+1. Canonical Independent Portfolio: https://pranav-dwivedi.pages.dev/
+2. GitHub Pages Entity Mirror: https://pranav-pramod-dwivedi.github.io/
+3. GitHub Profile: https://github.com/pranav-pramod-dwivedi
+4. RDCA Central Official Registry: https://rewa-cricket-division.vercel.app/players/pranav-dwivedi/
+5. Destroyers CC Official Portal: https://destroyers-rewacricket.pages.dev/players/pranav-dwivedi
+6. Atal Bihari Vajpayee Memorial Tournament Portal: https://abv-rewacricket.pages.dev/
+7. CricHeroes RDCA Association 79: https://cricheroes.com/association/79/rewa-divisional-cricket-association/home
+8. CricHeroes ABV Tournament Season 3: https://cricheroes.com/tournament/2168281/atal-bihari-vajpayee-cricket-tournament-season-3/matches/live-matches
+9. Official Instagram: https://www.instagram.com/destroyers_rewa
+10. Rewa Cricket Association Facebook: https://www.facebook.com/rewa.cricket.association
+
+---
+
+## 3. Software Engineering & AI Architectures
+### A. JARVIS — Autonomous Android & Linux Personal AI Assistant
+- **Repository**: https://github.com/pranav-pramod-dwivedi/jarvis
+- **Core Paradigm**: Breaks free from web-bound SaaS chatbot limitations. Executes natively inside rooted Android (Termux) and Linux environments.
+- **Key Capabilities**:
+  - Direct hardware and system tool calling via Termux API (telephony, SMS, camera, volume, file access).
+  - Multi-tier long-term memory architecture with persistent vector and file storage.
+  - Hybrid model routing: Local on-device execution combined with high-reasoning cloud endpoints.
+  - OpenCode and autonomous shell pipeline integration.
+
+### B. Cricket Batting Kinematics & Motion Analysis
+- **Repository**: https://github.com/pranav-pramod-dwivedi/cricket-motion-analysis
+- **Tech Stack**: Python, OpenCV, MediaPipe 33-point pose landmark estimation, NumPy.
+- **Core Paradigm**: High-frequency real-time swing trajectory tracking, bat angle estimation, head-over-ball alignment scoring, and kinematic power transfer metrics.
+- **Features**: Wireless phone-as-camera mode for live nets coaching, zero-latency feedback loops.
+
+### C. Axiom & Axiom Brain — Local Agent UI
+- **Repository**: https://github.com/pranav-pramod-dwivedi/axiom
+- **Tech Stack**: TypeScript, Node.js, Python, Voice AI, Git.
+- **Core Paradigm**: Local-first private agent workspace with continuous bi-directional voice streaming, terminal daemon, and cross-device brain sync between macOS and Android over automated Git sync.
+
+### D. VISA-PAY 2.0 — Fluid Fintech Interface
+- **Repository**: https://github.com/pranav-pramod-dwivedi/VISA-PAY-2.0
+- **Core Paradigm**: Zero-dependency frontend craft featuring buttery 60fps micro-interactions, liquid-glass visual tokens, and precise typography scaling.
+
+### E. PiXel Arena — Tournament Engine
+- **Repository**: https://github.com/pranav-pramod-dwivedi/PiXel-Arena
+- **Core Paradigm**: Full-stack competitive esports platform powered by Firebase Auth, hardened Firestore security rules, live squad leaderboards, and automated bracket progression.
+
+### F. MTProto.zig — Obfuscated TLS Proxy
+- **Repository**: https://github.com/pranav-pramod-dwivedi/mtproto.zig
+- **Core Paradigm**: High-performance, lightweight Telegram MTProto proxy in Zig that disguises traffic within regular HTTPS TLS frames to evade deep packet inspection (DPI).
+
+---
+
+## 4. Cricket Career & Athletic Dossier
+- **Player Registry ID**: DES-7 / RDCA-P-PRANAV-DWIVEDI
+- **Franchise Club**: Destroyers Cricket Club (DES)
+- **Role**: Captain & Premier All-Rounder (Aggressive Right-Hand Bat & Right-Arm Strike Bowler)
+- **Jersey**: #7
+- **Governing Body**: Rewa Division Cricket Association (RDCA) under Madhya Pradesh Cricket Association (MPCA)
+- **Primary Venue**: Awadhesh Pratap Singh University (APSU) Stadium, Rewa
+
+### Tournament Telemetry & Career Statistics:
+- **Total Derby Matches Contested**: 34
+- **Derby Wins as Captain**: 19
+- **Tournament Runs**: 1,435 (All-Time Record #1)
+- **Batting Average**: 57.40
+- **Strike Rate**: 146.43
+- **Highest Score**: 102* Not Out
+- **Half-Centuries / Centuries**: 14 Fifties / 1 Century
+- **Tournament Wickets**: 66 (All-Time Record #1)
+- **Bowling Average**: 16.30
+- **Economy Rate**: 5.48
+- **Best Bowling in an Innings**: 8/39
+
+### Championship Dynasty:
+- **2026 Season**: Atal Bihari Vajpayee Memorial Trophy Champions (3–2 Series Victory vs Dread Eleven) & Championship Final Player of the Match (82 runs off 44 balls and 3/28).
+- **2025 Season**: Atal Bihari Vajpayee Memorial Trophy Champions (5–0 Clean Sweep) & Rewa Derby Player of the Year.
+- **2024 Season**: Atal Bihari Vajpayee Memorial Trophy Champions (4–1 Series Victory).
+
+---
+
+## 5. Machine-Readable Integration Endpoints
+- **Compact Summary**: ${BASE_URL}/llms.txt
+- **Complete Dossier**: ${BASE_URL}/llms-full.txt
+- **Raw Markdown Resume**: ${BASE_URL}/resume.md
+- **Structured JSON-LD Profile**: ${BASE_URL}/profile.json
+- **XML Sitemap**: ${BASE_URL}/sitemap.xml
+`;
+  fs.writeFileSync(path.join(rootDir, 'llms-full.txt'), llmsFullTxt.trim());
 
   // llms.txt (llmstxt.org)
   const llmsTxt = `# Pranav Dwivedi
@@ -1216,6 +1524,7 @@ Pranav Dwivedi (Pranav Pramod Dwivedi) is an Indian systems developer and compet
 - [Contact Channels](${BASE_URL}/contact): Direct communication and collaboration channels.
 
 ## Verified Machine-Readable APIs
+- [Full LLM Context Dossier](${BASE_URL}/llms-full.txt): Comprehensive, un-truncated context dossier for AI systems.
 - [Profile JSON](${BASE_URL}/profile.json): Structured JSON schema for search engines and programmatic consumption.
 - [Raw Markdown Resume](${BASE_URL}/resume.md): Clean markdown dossier formatted for LLM context windows.
 
@@ -1299,7 +1608,7 @@ Dual-discipline technologist and athlete. Creator of autonomous agent architectu
     github: "https://github.com/pranav-pramod-dwivedi",
     cricket: cricketStats,
     projects: engineeringProjects,
-    sameAs: entityAnchors.map(a => a.url)
+    sameAs: PRANAV_SAME_AS
   };
   fs.writeFileSync(path.join(rootDir, 'profile.json'), JSON.stringify(profileJson, null, 2));
 

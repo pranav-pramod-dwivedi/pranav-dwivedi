@@ -13,6 +13,7 @@ Pranav Dwivedi (Pranav Pramod Dwivedi) is an Indian systems developer and compet
 - [Contact Channels](https://pranav-dwivedi.pages.dev/contact): Direct communication and collaboration channels.
 
 ## Verified Machine-Readable APIs
+- [Full LLM Context Dossier](https://pranav-dwivedi.pages.dev/llms-full.txt): Comprehensive, un-truncated context dossier for AI systems.
 - [Profile JSON](https://pranav-dwivedi.pages.dev/profile.json): Structured JSON schema for search engines and programmatic consumption.
 - [Raw Markdown Resume](https://pranav-dwivedi.pages.dev/resume.md): Clean markdown dossier formatted for LLM context windows.
 
