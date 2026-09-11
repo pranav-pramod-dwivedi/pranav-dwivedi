@@ -138,6 +138,23 @@ body {
   color: var(--c-white);
 }
 
+.brand-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  display: block;
+  flex-shrink: 0;
+  border: 2px solid var(--c-cyan-bright);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.35);
+  transition: transform 0.2s var(--ease-snappy);
+}
+
+.brand-monogram:hover .brand-logo {
+  transform: scale(1.05);
+}
+
 .mono-symbol {
   display: flex;
   align-items: center;
@@ -1228,6 +1245,11 @@ body {
 
   .mobile-toggle {
     display: flex;
+  }
+
+  .brand-logo {
+    width: 38px;
+    height: 38px;
   }
 
   .hero-section {
