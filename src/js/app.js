@@ -6,9 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initAmbientCanvas();
   initMobileDrawer();
   initDisciplineTabs();
+  initHeroEngineTabs();
 });
 
-// 1. Subtle 60fps Ambient Grain/Particles (No Canvas Lag)
+// 1. Subtle 60fps Ambient Cyan Particles (Optimized, No Canvas Lag)
 function initAmbientCanvas() {
   const canvas = document.getElementById('ambient-canvas');
   if (!canvas) return;
@@ -22,7 +23,7 @@ function initAmbientCanvas() {
     height = canvas.height = window.innerHeight;
   }, { passive: true });
 
-  const particleCount = Math.min(30, Math.floor(width / 40));
+  const particleCount = Math.min(32, Math.floor(width / 35));
   const particles = [];
 
   for (let i = 0; i < particleCount; i++) {
@@ -32,7 +33,7 @@ function initAmbientCanvas() {
       vx: (Math.random() - 0.5) * 0.35,
       vy: (Math.random() - 0.5) * 0.35,
       radius: Math.random() * 1.5 + 0.5,
-      alpha: Math.random() * 0.4 + 0.1
+      alpha: Math.random() * 0.35 + 0.08
     });
   }
 
@@ -52,7 +53,7 @@ function initAmbientCanvas() {
 
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(245, 158, 11, ${p.alpha})`;
+      ctx.fillStyle = `rgba(56, 189, 248, ${p.alpha})`;
       ctx.fill();
     }
 
@@ -74,7 +75,7 @@ function initMobileDrawer() {
   });
 }
 
-// 3. Discipline Switcher Tabs
+// 3. Discipline Switcher Tabs (Main Page)
 function initDisciplineTabs() {
   const tabs = document.querySelectorAll('.tab-btn[data-tab]');
   const engBlock = document.getElementById('block-engineering');
@@ -97,6 +98,31 @@ function initDisciplineTabs() {
       } else {
         engBlock.style.display = 'block';
         cricketBlock.style.display = 'block';
+      }
+    });
+  });
+}
+
+// 4. Hero Engine Dual-Panel Switcher
+function initHeroEngineTabs() {
+  const tabs = document.querySelectorAll('.engine-nav-tab[data-engine]');
+  const panelSys = document.getElementById('engine-panel-systems');
+  const panelAthletic = document.getElementById('engine-panel-athletics');
+
+  if (!tabs.length || !panelSys || !panelAthletic) return;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      const target = tab.getAttribute('data-engine');
+      if (target === 'athletics') {
+        panelSys.style.display = 'none';
+        panelAthletic.style.display = 'block';
+      } else {
+        panelSys.style.display = 'block';
+        panelAthletic.style.display = 'none';
       }
     });
   });
