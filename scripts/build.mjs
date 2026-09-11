@@ -1686,11 +1686,11 @@ function generateMachineFiles() {
 
   const urls = [
     { loc: '/', priority: '1.0', changefreq: 'weekly' },
-    { loc: '/engineering', priority: '0.9', changefreq: 'weekly' },
-    { loc: '/cricket', priority: '0.9', changefreq: 'weekly' },
-    { loc: '/about', priority: '0.8', changefreq: 'monthly' },
-    { loc: '/privacy', priority: '0.8', changefreq: 'monthly' },
-    { loc: '/contact', priority: '0.8', changefreq: 'monthly' },
+    { loc: '/engineering/', priority: '0.9', changefreq: 'weekly' },
+    { loc: '/cricket/', priority: '0.9', changefreq: 'weekly' },
+    { loc: '/about/', priority: '0.8', changefreq: 'monthly' },
+    { loc: '/privacy/', priority: '0.8', changefreq: 'monthly' },
+    { loc: '/contact/', priority: '0.8', changefreq: 'monthly' },
     { loc: '/resume.md', priority: '0.7', changefreq: 'monthly' },
     { loc: '/profile.json', priority: '0.7', changefreq: 'monthly' },
     { loc: '/llms.txt', priority: '0.8', changefreq: 'weekly' },
