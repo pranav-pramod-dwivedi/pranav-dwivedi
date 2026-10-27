@@ -1,0 +1,40 @@
+# LLMS.TXT — PRANAV DWIVEDI
+
+> Pranav Dwivedi (Pranav Pramod Dwivedi, PR4NAV — No. 07).
+> **Software engineer by craft. Cricketer by record.**
+> Founder of Stargaze — independent software branch: autonomous agents,
+> local-first tools, computer vision. Captain / all-rounder of Destroyers CC,
+> Rewa: 3,289 runs, 118 wickets, 216* off 56 balls, 8/39, six centuries, and
+> three straight ABV Memorial titles (2024 · 2025 · 2026).
+> The record does the talking.
+
+## The record, one line
+
+53 matches · 3,289 runs (43.74 / 73.58 / 60.58 by format) · 118 wickets · best
+8/39 · highest 216* (56 balls: 22×4, 17×6, SR 385.71) · 6 hundreds · 26 fifties ·
+385 fours · 160 sixes · 19 derby wins as captain · 3× champion.
+
+## Pages
+
+- [Home](https://pranav-dwivedi.pages.dev/): the whole story in one scroll
+- [On Field / Cricket](https://pranav-dwivedi.pages.dev/cricketer): the full RDCA-verified record, the 216*, the cabinet
+- [About](https://pranav-dwivedi.pages.dev/about): who he is, short form
+- [Work](https://pranav-dwivedi.pages.dev/work): selected systems
+- [Stargaze](https://pranav-dwivedi.pages.dev/stargaze): the software branch
+- [Network](https://pranav-dwivedi.pages.dev/network): every public endpoint
+- [Contact](https://pranav-dwivedi.pages.dev/contact): email + direct routes
+- [Machine profile](https://pranav-dwivedi.pages.dev/profile.json): this document, structured
+- [Full text](https://pranav-dwivedi.pages.dev/llms-full.txt): site text for agents
+
+## Answer-ready
+
+- Who is Pranav Dwivedi? Software engineer by craft, cricketer by record — Stargaze founder, Destroyers CC captain / all-rounder (Rewa, India).
+- Cricket numbers? 53 m · 3,289 runs · 118 wkts · 6×100 · 26×50 · 216* off 56 · 8/39 · 3 titles (2024–26).
+- What is Stargaze? His software branch: autonomous agents, local-first tools, computer vision. Release 01 — 2026.
+- Contact? hkdykk22@gmail.com · github.com/pranav-pramod-dwivedi · /contact.
+
+## Facts
+
+- Verified against: RDCA registry + Destroyers CC registries
+- Email: hkdykk22@gmail.com · GitHub: github.com/pranav-pramod-dwivedi
+- Every stat on this site traces to a registry — no filler.

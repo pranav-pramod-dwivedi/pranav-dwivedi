@@ -1,0 +1,61 @@
+/* ============================================================
+   PRANAV DWIVEDI — mobile / touch layer
+   Turns hover-led details into visible touch states, keeps the
+   portrait lens reachable without a mouse, and gives links a
+   clear pressed state.
+   ============================================================ */
+
+@media (hover: none), (pointer: coarse) {
+  .hero__reveal { display: block; }
+  .hero__portrait { touch-action: pan-y; -webkit-tap-highlight-color: transparent; }
+  .hero__reveal img { opacity: 1; }
+
+  /* Hover states are mirrored by .is-touch in the base styles. These
+     are the always-visible mobile cues so no interaction is required
+     to understand that cards and rows are actionable. */
+  .tile .tile__arrow,
+  .sg-row .sg-row__arrow,
+  .nw-row .nw-row__arrow,
+  .social .social__go { color: var(--lime); }
+
+  .sg-row .sg-row__arrow { color: var(--sg-orange); }
+
+  .tile img { filter: brightness(1.05) contrast(1.02); }
+  .tile:active img,
+  .tile.is-touch img { filter: brightness(1.14) contrast(1.05); scale: 1.02; }
+
+  .wk-row:active,
+  .wk-row.is-touch,
+  .nw-row:active,
+  .nw-row.is-touch { background: rgba(242, 240, 233, 0.045); }
+
+  .pg-link-card:active,
+  .pg-link-card.is-touch { background: var(--cream); color: #080808; }
+  .pg-link-card:active span,
+  .pg-link-card.is-touch span { color: rgba(8, 8, 8, 0.58); }
+
+  .pg-btn:active, .pg-btn.is-touch,
+  .ot-cta:active, .ot-cta.is-touch,
+  .ot-record-pill:active, .ot-record-pill.is-touch {
+    filter: brightness(1.08);
+    translate: 0 1px;
+  }
+
+  .menu__links a:active,
+  .menu__links a.is-touch { padding-left: 1.4rem; }
+
+  .hscroll__sticky { scrollbar-width: none; }
+  .hscroll__sticky::-webkit-scrollbar { display: none; }
+
+  /* A small swipe cue for the horizontal work reel, only on touch. */
+  .hscroll__label .mono:last-child { display: inline; }
+  .hscroll__label .mono:last-child::after { content: " / swipe →"; }
+
+
+}
+
+@media (max-width: 540px) {
+  .pg-facts { gap: 0; }
+  .wk-row, .nw-row, .sg-row { -webkit-tap-highlight-color: transparent; }
+  .sg-row__arrow, .nw-row__arrow { opacity: 1; }
+}

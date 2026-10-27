@@ -1,0 +1,148 @@
+/* ============================================================
+   hover.css — pointer-feedback layer
+   Loads on every page AFTER style.css / stargaze.css.
+   Compositor-only hover states: transform · opacity ·
+   background · border-color (plus the brief box-shadow glow
+   requested for .is-top cards). No width/height/margin/top
+   animation. Fine-pointer devices only.
+   ============================================================ */
+
+:root { --ho-ease: cubic-bezier(0.16, 1, 0.3, 1); }
+
+/* ---------------- hover states (fine pointers) ----------------
+   Buttons/rows that style.css already raises, rotates or washes on
+   hover (.tile img zoom, .tile__arrow spin, .btn-round 45° disc,
+   .ck-table tbody tr lime wash, .btn-stargaze svg 3px diagonal)
+   are intentionally NOT re-declared here — hover.css would win by
+   order and only weaken them. This file adds what's missing.   */
+@media (hover: hover) and (pointer: fine) {
+
+  /* 1 · .link-u — the reveal/exit sweep is style.css (scaleX flip).
+         Hover.css tints the retracting line lime; lime surfaces
+         (contact ct-card) keep their dark line.                  */
+  .link-u:hover::after { background: var(--lime, #d2ff00); }
+  .ct-card--lime .link-u:hover::after { background: currentColor; }
+
+  /* 2 · .social — lime left rule + row wash + slide. The left rule
+         is a scaleY bar (zero layout shift, no border reflow).   */
+  .social { position: relative; }
+  .social::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 1px;
+    background: var(--lime, #d2ff00);
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.35s var(--ho-ease), opacity 0.35s;
+    pointer-events: none;
+  }
+  .social__name { transition: transform 0.35s var(--ho-ease); }
+  .social:hover { background: rgba(210, 255, 0, 0.05); }
+  .social:hover::before { opacity: 1; transform: scaleY(1); }
+  .social:hover .social__go  { transform: translateX(6px) rotate(45deg); } /* keeps style.css rotate */
+  .social:hover .social__name { transform: translateX(4px); }
+
+  /* 3 · .journey__rail — lime rail + 4px lift. .is-now stays lime. */
+  .journey__rail li {
+    transition: border-color 0.3s var(--ho-ease), transform 0.3s var(--ho-ease);
+  }
+  .journey__rail li:hover {
+    border-left-color: var(--lime, #d2ff00);
+    transform: translateY(-4px);
+  }
+
+  /* 4 · .stats .stat — one lime tick that draws under the label
+         on card hover. No bar-width motion, no card transform
+         (stat cards carry [data-reveal] transforms).             */
+  .stat > .mono:first-child { position: relative; align-self: flex-start; }
+  .stat > .mono:first-child::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -0.35rem;
+    width: 100%; height: 1px;
+    background: var(--lime, #d2ff00);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s var(--ho-ease);
+  }
+  .stat:hover > .mono:first-child::after { transform: scaleX(1); }
+
+  /* 5 · .btn-stargaze — lift one more px than style.css (-3px);
+         bg stays cream.hover (lime→lime makes no sense, original
+         bg is already lime and cream stays readable).            */
+  .btn-stargaze:hover { transform: translateY(-3px); }
+
+  /* 9 · cricketer record cards — lift + rail turns lime.           */
+  .ot-card, .ot-gear, .ot-hundred, .ot-haul, .ot-record, .ot-season, .ot-award {
+    transition: transform 0.35s var(--ho-ease), border-color 0.35s var(--ho-ease), box-shadow 0.35s var(--ho-ease);
+  }
+  .ot-card:hover, .ot-gear:hover, .ot-hundred:hover,
+  .ot-haul:hover, .ot-record:hover, .ot-season:hover, .ot-award:hover {
+    transform: translateY(-4px);
+  }
+  .ot-gear:hover, .ot-hundred:hover, .ot-haul:hover,
+  .ot-record:hover, .ot-season:hover {
+    border-color: var(--lime, #d2ff00);
+  }
+  .ot-award:hover { border-bottom-color: var(--lime, #d2ff00); }
+
+  /* .is-top hundred/hauler — lime corner glow (bottom-right, square,
+     reads as an offset shadow of the lime card on black).          */
+  .ot-hundred.is-top:hover, .ot-haul.is-top:hover {
+    box-shadow: 10px 10px 0 rgba(210, 255, 0, 0.12);
+  }
+
+  /* 10 · .ph panels — caption sinks 4px on hover.
+          Lives in .panel--img padding, no clipping.               */
+  .ph figcaption { transition: transform 0.3s var(--ho-ease); }
+  .ph:hover figcaption { transform: translateY(4px); }
+
+  /* 11 · .ot-jersey — verified absent from cricketer.html (only
+          reference/*.html remakes carry it): deliberately skipped. */
+}
+
+/* ---------------- focus twins (everywhere, any input) ----------- */
+/* Keyboard parity with the states above + the site's other
+   actionable crates. Outline only — no transform.                 */
+.link-u:focus-visible,
+.btn-stargaze:focus-visible,
+.btn-round:focus-visible,
+.social:focus-visible,
+.tile:focus-visible,
+.ot-cta:focus-visible,
+.ot-arrow-link:focus-visible,
+.ot-record-pill:focus-visible,
+.ot-card:focus-visible,
+.ot-gear:focus-visible,
+.ot-hundred:focus-visible,
+.ot-haul:focus-visible,
+.ot-record:focus-visible,
+.ot-season:focus-visible,
+.ot-award:focus-visible {
+  outline: 2px solid var(--lime, #d2ff00);
+  outline-offset: 3px;
+}
+
+/* ---------------- reduced motion ---------------------------------
+   Kills every motion this file introduces: hover transforms snap
+   to rest, transitions go instant, the .social bar and the stat
+   tick simply never appear. Colors (lime tint, row wash) survive —
+   they are state, not movement.                                    */
+@media (prefers-reduced-motion: reduce) {
+  .social::before, .social:hover::before,
+  .stat > .mono:first-child::after { display: none; }
+
+  .social__name, .journey__rail li, .ph figcaption,
+  .ot-card, .ot-gear, .ot-hundred, .ot-haul,
+  .ot-record, .ot-season, .ot-award { transition: none; }
+
+  .social:hover .social__go, .social:hover .social__name,
+  .journey__rail li:hover, .btn-stargaze:hover, .ph:hover figcaption,
+  .ot-card:hover, .ot-gear:hover, .ot-hundred:hover,
+  .ot-haul:hover, .ot-record:hover, .ot-season:hover,
+  .ot-award:hover { transform: none; }
+
+  .ot-hundred.is-top:hover, .ot-haul.is-top:hover { box-shadow: none; }
+}

@@ -1,0 +1,7 @@
+reference/
+.DS_Store
+node_modules/
+.openwolf/
+.opencode/
+CONTENT-TODO.md
+*.log

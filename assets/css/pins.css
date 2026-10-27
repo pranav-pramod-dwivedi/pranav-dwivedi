@@ -1,0 +1,79 @@
+/* ============ PIN ENGINE SCRUB — pinned sections (loads after style.css + stargaze.css) ============ */
+/* engine sets --p (0→1) on [data-pin] and translates [data-pin-track]; sticky comes from CSS only */
+
+/* home — season strip: pin + staggered stat scrub */
+@media (min-width: 901px){
+  .season[data-pin]{ height: 220vh; }
+  .season .wrap{ position: sticky; top: 11vh; }
+  .season__title{ transform: translate3d(0, calc(var(--p,0) * -3vh), 0); }
+  .stats .stat{
+    --win: clamp(0, calc((var(--p,0) - var(--d,0)) * 4), 1);
+    opacity: calc(.35 + var(--win) * .65);
+    transform: translate3d(0, calc((1 - var(--win)) * 7vh), 0);
+  }
+  .stats .stat:nth-child(2){ --d: .08; }
+  .stats .stat:nth-child(3){ --d: .16; }
+  .stats .stat:nth-child(4){ --d: .24; }
+}
+
+/* cricketer 216 — career ledger: pin + staggered scrub */
+@media (min-width: 901px){
+  .ot-career[data-pin]{ height: 200vh; }
+  .ot-career .wrap{ position: sticky; top: 9vh; }
+  .ot-career__stats .ot-stat{
+    --win: clamp(0, calc((var(--p,0) - var(--d,0)) * 4), 1);
+    opacity: calc(.35 + var(--win) * .65);
+    transform: translate3d(0, calc((1 - var(--win)) * 7vh), 0);
+  }
+  .ot-career__stats .ot-stat:nth-child(2){ --d: .06; }
+  .ot-career__stats .ot-stat:nth-child(3){ --d: .12; }
+  .ot-career__stats .ot-stat:nth-child(4){ --d: .18; }
+  .ot-career__stats .ot-stat:nth-child(5){ --d: .24; }
+  .ot-career__figure img{ transform: scale(calc(1 - 0.03 + var(--p,0) * 0.06)); }
+}
+
+/* cricketer 216 — seasons rail: pin + translating track */
+@media (min-width: 901px){
+  .ot-seasons[data-pin]{ height: 300vh; }
+  .ot-seasons .wrap{ position: sticky; top: 10vh; overflow: hidden; }
+  .ot-seasons__grid{
+    display: flex; gap: clamp(16px, 2vw, 28px);
+    width: max-content; will-change: transform; transform: translate3d(0,0,0);
+  }
+  .ot-seasons__grid .ot-season{
+    flex: 0 0 clamp(240px, 26vw, 380px);
+    border-left: 1px solid var(--line);
+  }
+}
+
+/* stargaze — sg-hero: pin + scrub */
+@media (min-width: 901px){
+  .sg-hero[data-pin]{ height: 200vh; }
+  .sg-hero .sg-wrap{ position: sticky; top: 0; min-height: 100svh; }
+  .sg-hero h1{ transform: translate3d(0, calc(var(--p,0) * -2vh), 0) scale(calc(0.985 + var(--p,0) * 0.05)); }
+  .sg-hero p{ opacity: calc(.6 + var(--p,0) * .4); }
+}
+
+/* mobile — never pin, fully static stacking */
+@media (max-width: 900px){
+  .season[data-pin], .ot-career[data-pin], .ot-seasons[data-pin], .sg-hero[data-pin]{ height: auto; }
+  .season .wrap, .ot-career .wrap, .ot-seasons .wrap, .sg-hero .sg-wrap{ position: static; }
+  .sg-hero .sg-wrap{ min-height: 0; }
+  .season__title{ transform: none; }
+  .stats .stat, .ot-career__stats .ot-stat{ opacity: 1; transform: none; }
+  .ot-career__figure img{ transform: none; }
+  .ot-seasons__grid{ display: grid; width: auto; transform: none; }
+  .sg-hero h1{ transform: none; }
+  .sg-hero p{ opacity: 1; }
+}
+
+/* reduced motion — fully disable pin + scrub everywhere */
+@media (prefers-reduced-motion: reduce){
+  .season[data-pin], .ot-career[data-pin], .ot-seasons[data-pin], .sg-hero[data-pin]{ height: auto; }
+  .season .wrap, .ot-career .wrap, .ot-seasons .wrap, .sg-hero .sg-wrap{ position: static; min-height: 0; }
+  .season__title, .ot-career__figure img, .sg-hero h1{ transform: none; }
+  .stats .stat, .ot-career__stats .ot-stat{ opacity: 1; transform: none; }
+  .ot-seasons__grid{ display: grid; width: auto; transform: none; }
+  .ot-seasons__grid .ot-season{ flex: initial; }
+  .sg-hero p{ opacity: 1; }
+}

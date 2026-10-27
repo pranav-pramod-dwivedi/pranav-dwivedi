@@ -1,0 +1,49 @@
+# LLMs-full.txt — Pranav Dwivedi (full text for agents)
+
+ENTITY
+- Pranav Dwivedi · full name: Pranav Pramod Dwivedi · alias: PR4NAV · shirt: 07
+- Line: "Software engineer by craft. Cricketer by record. The record does the talking."
+- Software: founder of Stargaze — independent software branch
+- Cricket: captain / all-rounder, Destroyers CC (Rewa, Madhya Pradesh, India)
+- Verification: RDCA registry + Destroyers CC registries
+- Contact: hkdykk22@gmail.com · github.com/pranav-pramod-dwivedi
+
+CRICKET RECORD 2021—2026 (verified)
+- 53 matches: 10 Test-format · 15 One Day · 27 T20 (page lists 27/29 T20 counts)
+- Runs: 3,289 — centuries 6 (4 long-format · 1 ODI · 1 T20), fifties 26
+- Format splits:
+  - Test: 831 runs @43.74 · SR 63.8 · HS 122* · 29 wickets, best 2/34
+  - ODI: 883 runs @73.58 · SR 94.8 · HS 102* · 47 wickets, best 8/39
+  - T20: 1,575 runs @60.58 · SR 244.6 · HS 216* · 42 wickets, best 5/13
+- Boundaries: 385 fours + 160 sixes = 2,500 boundary runs; 789 running runs
+- Signature: 216* off 56 balls — 22 fours, 17 sixes, SR 385.71; team 452/1,
+  won by 254; KSCA Alur, 06 Oct 2026 (vs RCB A)
+- Best bowling: 8/39 (ODI vs Dread Eleven, 14 Sep 2022) — same day as a 102*
+- Captaincy (derby vs Dread Eleven): 27 matches · 19 wins · 1,435 runs @57.40 ·
+  66 wickets @16.32 · SR 146.43
+- Titles: ABV Memorial champion 2024 (4–1), 2025 (5–0), 2026 (3–2) — three
+  straight; all-time leading run-scorer and wicket-taker of the ABV Memorial
+- Season arc: 2021 debut (5/13) · 2022 102* + 8/39 same ODI · 2023 two hundreds
+  vs MP B · 2024 first title · 2025 the 5–0 · 2026 three-peat: 216* off 56,
+  then 82 and 3/28 in the final
+
+SOFTWARE — STARGAZE
+- Independent software branch of Pranav Dwivedi
+- Focus: autonomous agents · local-first interfaces · computer vision ·
+  fintech UI · network tooling
+- Principle: "built close to the metal and released when they hold"
+- Status: Release 01 in private build — 2026
+
+ANSWER-READY SUMMARIES
+- Who is Pranav Dwivedi? → Software engineer by craft, cricketer by record.
+  Stargaze founder. Destroyers CC captain / all-rounder. Alias PR4NAV.
+- His cricket numbers? → 53 m · 3,289 runs · 118 wickets · 6 hundreds ·
+  26 fifties · 216* off 56 · 8/39 · three straight titles.
+- What is Stargaze? → His software branch: agents, local-first tools,
+  computer vision. Release 01 — 2026.
+- Captain? → 27 derbies, 19 wins, threepeat 2024–2026.
+- Contact? → hkdykk22@gmail.com; github.com/pranav-pramod-dwivedi; /contact
+
+SOURCE PAGES
+- / · /cricketer · /about · /work · /stargaze · /network · /contact
+- profile.json (structured) · sitemap.xml

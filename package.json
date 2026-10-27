@@ -1,0 +1,9 @@
+{
+  "name": "pranav-dwivedi-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Zero-dependency static site for Pranav Dwivedi — https://pranav-dwivedi.pages.dev/",
+  "scripts": {
+    "build": "echo 'Static site — nothing to build.'"
+  }
+}
