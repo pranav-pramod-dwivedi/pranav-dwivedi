@@ -1,24 +1,16 @@
 /index.html        /                  301
 
-# Cloudflare Pages — clean URLs rewritten at the same path (SEO-safe)
-/about           /about.html        200
-/work            /work.html         200
-/stargaze        /stargaze.html     200
-/cricketer       /cricketer.html    200
-/network         /network.html      200
-/contact         /contact.html      200
-/privacy         /privacy.html      200
-/404             /404.html          200
-
-# Legacy routes → new canonical destinations
-/cricket         /cricketer         301
-/cricket.html    /cricketer         301
-/cricketer.html  /cricketer         301
-/engineering     /work              301
-/engineering.html /work             301
-/about.html      /about             301
-/work.html       /work              301
-/stargaze.html   /stargaze          301
-/network.html    /network           301
-/contact.html    /contact           301
-/privacy.html    /privacy           301
+# Legacy routes → canonical destinations
+# (clean-URL serving (/about etc.) is native to Cloudflare Pages when
+#  about.html exists — rewrites here caused a self-308 loop)
+/cricket            /cricketer         301
+/cricket.html       /cricketer         301
+/cricketer.html     /cricketer         301
+/engineering        /work              301
+/engineering.html   /work              301
+/about.html         /about             301
+/work.html          /work              301
+/stargaze.html      /stargaze          301
+/network.html       /network           301
+/contact.html       /contact           301
+/privacy.html       /privacy           301

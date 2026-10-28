@@ -1,324 +1,86 @@
-<!DOCTYPE html>
-<html lang="en"><head>
+<!doctype html>
+<html lang="en">
+<head>
 <meta charset="utf-8">
+<title>404 — Lost in Rewa — Pranav Dwivedi</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>404 | Pranav Dwivedi</title>
-<meta name="description" content="Page not found. Return to the index, the work or the cricket record.">
-<meta name="author" content="Pranav Dwivedi">
-<meta property="og:site_name" content="Pranav Dwivedi">
-<meta property="og:url" content="https://pranav-dwivedi.pages.dev/">
-<meta property="og:title" content="404 | Pranav Dwivedi">
-<meta property="og:description" content="Page not found. Return to the index, the work or the cricket record.">
-<meta property="og:locale" content="en_IN">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://pranav-dwivedi.pages.dev/assets/img/og-card.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="404 | Pranav Dwivedi">
-<meta name="twitter:image" content="https://pranav-dwivedi.pages.dev/assets/img/og-card.png">
-<meta name="twitter:description" content="Page not found. Return to the index, the work or the cricket record.">
-<meta name="robots" content="noindex,follow">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://pranav-dwivedi.pages.dev/#pranav", "name": "Pranav Dwivedi", "alternateName": ["Pranav Pramod Dwivedi", "PR4NAV"], "jobTitle": ["Software Engineer", "Captain / All-rounder"], "description": "Software engineer by craft. Cricketer by record. Founder of Stargaze; captain / all-rounder of Destroyers CC (Rewa) — 3,289 runs, 118 wickets, 216* off 56, three straight titles.", "url": "https://pranav-dwivedi.pages.dev/", "email": "mailto:hkdykk22@gmail.com", "sport": "Cricket", "team": {"@type": "SportsTeam", "@id": "https://pranav-dwivedi.pages.dev/cricketer/#destroyers", "name": "Destroyers CC", "sport": "Cricket"}, "founder": {"@type": "Organization", "name": "Stargaze"}, "knowsAbout": ["software engineering", "autonomous agents", "computer vision", "local-first software", "cricket"], "sameAs": ["https://github.com/pranav-pramod-dwivedi", "https://www.instagram.com/destroyers_rewa", "https://rewa-cricket-division.vercel.app/players/pranav-dwivedi/", "https://destroyers-rewacricket.pages.dev/players/pranav-dwivedi/"]}, {"@type": "WebSite", "@id": "https://pranav-dwivedi.pages.dev/#website", "name": "Pranav Dwivedi", "url": "https://pranav-dwivedi.pages.dev/", "alternateName": "PRANAV DWIVEDI", "inLanguage": "en"}]}</script>
-<link rel="icon" href="assets/img/favicon.svg?v=2" type="image/svg+xml">
-<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<link rel="preload" href="assets/fonts/MonaSans.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/style.css?v=55">
-<link rel="stylesheet" href="assets/css/pages.css?v=12">
-<link rel="stylesheet" href="assets/css/motion.css?v=4">
-<link rel="stylesheet" href="assets/css/mobile.css?v=2">
-<link rel="stylesheet" href="assets/css/pins.css?v=1">
-<link rel="stylesheet" href="assets/css/hover.css?v=1">
-<noscript><style>.mask__i{transform:none!important}[data-reveal]{opacity:1;transform:none}.loader{display:none}</style></noscript>
+<meta name="robots" content="noindex">
+<meta name="description" content="This page doesn't exist. Head back to the home ground.">
+<link rel="canonical" href="https://pranav-dwivedi.pages.dev/404">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<style>
+  :root{--bg:#07090e;--fg:#e8ecf1;--dim:#5b6472;--line:#1a2028;--acc:#9cc4ff}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    background:var(--bg);color:var(--fg);
+    font:400 16px/1.5 ui-sans-serif,-apple-system,"Helvetica Neue",sans-serif;
+    display:flex;align-items:center;justify-content:center;overflow:hidden;
+  }
+  a{color:var(--acc);text-decoration:none;border-bottom:1px solid rgba(156,196,255,.35)}
+  .stage{display:flex;flex-direction:column;align-items:center;gap:2.25rem;padding:2rem;text-align:center}
+
+  /* ---------- the 0 orbiting trio ---------- */
+  .glyphs{display:flex;align-items:baseline;gap:.06em;
+    font-family:ui-monospace,"SF Mono",Menlo,monospace;
+    font-size:clamp(4.5rem,17vw,11rem);font-weight:300;letter-spacing:.02em}
+  .glyph{position:relative;display:inline-block;color:var(--fg)}
+  .glyph.l::after,.glyph.r::after{
+    content:"";position:absolute;top:50%;left:43%;width:1px;height:0;
+    transform:translate(-50%,-50%) rotate(45deg);background:var(--acc);
+    animation:slash 4.2s cubic-bezier(.6,.08,.34,1) infinite}
+  .glyph.r::after{animation-delay:2.1s}
+  @keyframes slash{
+    0%{height:0;opacity:0}
+    12%{height:0;opacity:1}
+    55%{height:140%;opacity:1}
+    62%{height:140%;opacity:1;background:var(--acc)}
+    63%{background:#ff6b6b}
+    100%{height:140%;opacity:0;background:#ff6b6b}}
+
+  /* ---------- field of drifting seeds ---------- */
+  .field{position:fixed;inset:0;pointer-events:none;z-index:-1}
+  .seed{position:absolute;width:3px;height:3px;border-radius:50%;
+    background:var(--fg);opacity:0}
+  .seed:nth-child(1){left:12%;animation:drift 26s linear 1s infinite}
+  .seed:nth-child(2){left:28%;animation:drift 22s linear 6s infinite}
+  .seed:nth-child(3){left:64%;animation:drift 30s linear 3s infinite}
+  .seed:nth-child(4){left:80%;animation:drift 24s linear 11s infinite}
+  .seed:nth-child(5){left:91%;animation:drift 28s linear 8s infinite}
+  @keyframes drift{
+    0%{transform:translateY(105vh) translateX(0);opacity:0}
+    8%{opacity:.45}
+    90%{opacity:.45}
+    100%{transform:translateY(-8vh) translateX(24px);opacity:0}}
+
+  /* ---------- copy ---------- */
+  .status{font-family:ui-monospace,Menlo,monospace;font-size:.72rem;
+    letter-spacing:.42em;text-transform:uppercase;color:var(--dim)}
+  .status em{font-style:normal;color:var(--acc)}
+  h1{font-size:1.05rem;font-weight:500;letter-spacing:.01em;color:var(--dim)}
+  h1 b{color:var(--fg);font-weight:600}
+  .back{opacity:0;transform:translateY(8px);animation:rise .8s ease 2.6s forwards}
+  .back a{padding:.15rem .1rem;transition:border-color .2s}
+  .back a:hover{border-bottom-color:var(--acc)}
+  @keyframes rise{to{opacity:1;transform:none}}
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important}
+    .back{opacity:1;transform:none}
+  }
+</style>
 </head>
-<body class="page-404">
+<body>
+<div class="field" aria-hidden="true"><i class="seed"></i><i class="seed"></i><i class="seed"></i><i class="seed"></i><i class="seed"></i></div>
 
-<div class="grain" aria-hidden="true"></div>
-<div class="progress" aria-hidden="true"><span></span></div>
-
-<div class="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"></div></div>
-
-<header class="nav">
-  <a class="brand" href="index.html" aria-label="Pranav Dwivedi, home">
-    <span class="brand__l1">PRANAV</span>
-    <span class="brand__l2">DWIVEDI</span>
-  </a>
-  <div class="nav__actions">
-    <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
-      <span></span><span></span>
-    </button>
+<main class="stage">
+  <div class="glyphs" aria-label="Error 404" role="img">
+    <span class="glyph l" aria-hidden="true">4</span><span class="glyph" aria-hidden="true">0</span><span class="glyph r" aria-hidden="true">4</span>
   </div>
-</header>
-
-<div class="menu" id="menu" aria-hidden="true">
-  <div class="menu__inner">
-    <div class="menu__links">
-      <a href="index.html" data-close><span>Home</span></a>
-      <a href="index.html#offtrack" data-close><span>Photos</span></a>
-      <a href="about.html" data-close><span>About</span></a>
-      <a href="work.html" data-close><span>Work</span></a>
-      <a href="stargaze.html" data-close><span>Stargaze</span></a>
-      <a href="cricketer.html" data-close><span>Cricket</span></a>
-      <a href="network.html" data-close><span>Network</span></a>
-      <a href="contact.html" data-close><span>Contact</span></a>
-    </div>
-    <div class="menu__side">
-      <div class="menu__img"><img src="assets/img/helmet.webp" alt="" loading="lazy" decoding="async"></div>
-      <div class="menu__meta">
-<a class="link-u" href="contact.html" data-close>Start a conversation ↗</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<main id="top" class="pg-main err-main">
-  <div class="wrap">
-    <span class="err-code">Error / 404</span>
-    <h1 class="err-title">Off the<br><em>grid.</em></h1>
-    <p class="err-copy">This page does not exist, or it moved when the site did. The record, the work and the branch are still where they should be.</p>
-    <div class="err-links">
-      <a class="pg-arrow-link" href="index.html">Home <span aria-hidden="true">↗</span></a>
-      <a class="pg-arrow-link" href="work.html">Work <span aria-hidden="true">↗</span></a>
-      <a class="pg-arrow-link" href="stargaze.html">Stargaze <span aria-hidden="true">↗</span></a>
-      <a class="pg-arrow-link" href="cricketer.html">Cricket <span aria-hidden="true">↗</span></a>
-      <a class="pg-arrow-link" href="contact.html">Contact <span aria-hidden="true">↗</span></a>
-    </div>
-
-    <section class="err-more" aria-labelledby="err-more-title" data-motion="links" data-motion-n="01" data-dir="left">
-      <h2 id="err-more-title">Or take the long way round.</h2>
-      <p>The record, the software ledger and the person behind both are still indexed.</p>
-      <div class="err-links">
-        <a class="pg-arrow-link" href="about.html">About <span aria-hidden="true">↗</span></a>
-        <a class="pg-arrow-link" href="network.html">Every endpoint <span aria-hidden="true">↗</span></a>
-        <a class="pg-arrow-link" href="privacy.html">Privacy <span aria-hidden="true">↗</span></a>
-        <a class="pg-arrow-link" href="mailto:hkdykk22@gmail.com">Email <span aria-hidden="true">↗</span></a>
-      </div>
-    </section>
-  </div>
-
-<!-- EXTRA SECTIONS / generated for review -->
-
-  <section class="pg-section" aria-labelledby="err-happened" data-motion="facts" data-motion-n="02" data-dir="right">
-    <div class="wrap">
-      <div class="pg-head">
-        <div>
-          <h2 id="err-happened" style="margin-top:1rem;">What probably<br><em>happened.</em></h2>
-        </div>
-        <p>The ordinary reasons a route disappears.</p>
-      </div>
-      <div class="pg-facts">
-        <div class="pg-fact"><span class="mono">01</span><b>The URL changed</b><small>The page moved when the site moved from the old portfolio to this build.</small></div>
-        <div class="pg-fact"><span class="mono">02</span><b>A typo</b><small>A missing letter or an extra slash is enough to miss the route.</small></div>
-        <div class="pg-fact"><span class="mono">03</span><b>An old link</b><small>A bookmark or an external page still points at the previous structure.</small></div>
-        <div class="pg-fact"><span class="mono">04</span><b>It never existed</b><small>The address may have been guessed rather than copied from a real link.</small></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="pg-section" aria-labelledby="err-url" data-motion="checks" data-motion-n="03" data-dir="up">
-    <div class="wrap">
-      <div class="pg-head">
-        <div>
-          <h2 id="err-url" style="margin-top:1rem;">Check the<br><em>URL.</em></h2>
-        </div>
-        <p>The quick checks before you give up on the address.</p>
-      </div>
-      <ul class="pg-checks">
-        <li>The file name ends in .html, except for the home page.</li>
-        <li>There is no space or capital letter in the route.</li>
-        <li>The link starts with this site's domain, not the old one.</li>
-        <li>The page is not marked private or removed on purpose.</li>
-        <li>The route is listed on the Network page.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="pg-section" aria-labelledby="err-start" data-motion="links" data-motion-n="04" data-dir="left">
-    <div class="wrap">
-      <div class="pg-head">
-        <div>
-          <h2 id="err-start" style="margin-top:1rem;">Start from<br><em>the index.</em></h2>
-        </div>
-        <p>The three routes that cover most of the site.</p>
-      </div>
-      <div class="pg-link-grid">
-        <a class="pg-link-card" href="work.html"><b>The<br><em>work.</em></b><span class="mono">Agents / tools / vision ↗</span></a>
-        <a class="pg-link-card" href="cricketer.html"><b>The<br><em>record.</em></b><span class="mono">3,289 runs / 118 wickets ↗</span></a>
-        <a class="pg-link-card" href="stargaze.html"><b>The<br><em>branch.</em></b><span class="mono">Stargaze / Release 01 ↗</span></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="pg-section" aria-labelledby="err-popular" data-motion="ledger" data-motion-n="05" data-dir="right">
-    <div class="wrap">
-      <div class="pg-head">
-        <div>
-          <h2 id="err-popular" style="margin-top:1rem;">Popular<br><em>routes.</em></h2>
-        </div>
-        <p>The pages people usually want.</p>
-      </div>
-      <div class="pg-ledger">
-        <div class="pg-ledger__row"><span class="mono">01</span><b>Home</b><p>The entry point and the current photographs.</p><a href="index.html">Open ↗</a></div>
-        <div class="pg-ledger__row"><span class="mono">02</span><b>About</b><p>The short biography and the working principles.</p><a href="about.html">Open ↗</a></div>
-        <div class="pg-ledger__row"><span class="mono">03</span><b>Work</b><p>The full software ledger and the archive.</p><a href="work.html">Open ↗</a></div>
-        <div class="pg-ledger__row"><span class="mono">04</span><b>Stargaze</b><p>The independent software branch.</p><a href="stargaze.html">Open ↗</a></div>
-        <div class="pg-ledger__row"><span class="mono">05</span><b>Cricket</b><p>The verified career record.</p><a href="cricketer.html">Open ↗</a></div>
-        <div class="pg-ledger__row"><span class="mono">06</span><b>Contact</b><p>The direct routes for a message.</p><a href="contact.html">Open ↗</a></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="pg-section" aria-labelledby="err-menu" data-motion="prose" data-motion-n="06" data-dir="up">
-    <div class="wrap">
-      <div class="pg-head">
-        <div>
-          <h2 id="err-menu" style="margin-top:1rem;">Use the<br><em>menu.</em></h2>
-        </div>
-        <p>Every public route is one tap away.</p>
-      </div>
-      <div class="pg-prose">
-        <p>The menu is the complete public navigation. It includes the home page, the photographs, About, Work, Stargaze, Cricket, Network and Contact. If a route is not there, it is not part of the current build.</p>
-        <p>The footer repeats the main routes and adds the external profiles. Either is a faster path than editing the address bar.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="pg-section" aria-labelledby="err-old" data-motion="prose" data-motion-n="07" data-dir="left">
-    <div class="wrap">
-      <div class="pg-head">
-        <div>
-          <h2 id="err-old" style="margin-top:1rem;">Old<br><em>links.</em></h2>
-        </div>
-        <p>The previous site had a different structure.</p>
-      </div>
-      <div class="pg-prose">
-        <p>The legacy portfolio used a flatter set of pages and machine-readable files. Some of those URLs still resolve on the old domain. If you arrived from a bookmark, the old page may be the thing that moved, not the record.</p>
-        <p>The Network page lists the legacy files that are still online. They will remain available until Stargaze Release 01 has its own public schema.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="pg-section" aria-labelledby="err-report" data-motion="prose" data-motion-n="08" data-dir="right">
-    <div class="wrap">
-      <div class="pg-head">
-        <div>
-          <h2 id="err-report" style="margin-top:1rem;">Report a<br><em>broken link.</em></h2>
-        </div>
-        <p>A useful report includes the route you came from.</p>
-      </div>
-      <div class="pg-prose">
-        <p>Send the address that failed and the page that sent you there. If the link came from an external site, include that page too. The fix may belong in the index rather than the destination.</p>
-        <p>Email hkdykk22@gmail.com with “Broken link” in the subject. A screenshot is optional. The URL is the important part.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="pg-section" aria-labelledby="err-machine" data-motion="ledger" data-motion-n="09" data-dir="up">
-    <div class="wrap">
-      <div class="pg-head">
-        <div>
-          <h2 id="err-machine" style="margin-top:1rem;">Machine-<br><em>readable files.</em></h2>
-        </div>
-        <p>The old files still live on the legacy domain.</p>
-      </div>
-      <div class="pg-ledger">
-        <div class="pg-ledger__row"><span class="mono">01</span><b>llms.txt</b><p>The old machine-readable summary.</p><a href="https://pranav-dwivedi.pages.dev/llms.txt">Open ↗</a></div>
-        <div class="pg-ledger__row"><span class="mono">02</span><b>profile.json</b><p>Structured entity profile, pending the new schema.</p><a href="https://pranav-dwivedi.pages.dev/profile.json">Open ↗</a></div>
-        <div class="pg-ledger__row"><span class="mono">03</span><b>resume.md</b><p>The raw markdown resume.</p><a href="https://pranav-dwivedi.pages.dev/resume.md">Open ↗</a></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="pg-band" aria-labelledby="err-elsewhere" data-motion="band" data-motion-n="10" data-dir="left">
-    <div class="wrap">
-            <div class="pg-band__grid">
-        <div>
-          <h2 id="err-elsewhere">Elsewhere,<br><em>if needed.</em></h2>
-          <p>The public work is also on GitHub, the cricket record is on the registry and the branch has its own home. Use the route that matches what you were looking for.</p>
-          <a class="pg-btn pg-btn--dark" href="network.html">Open the route <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="pg-band__meta">
-          <span class="mono">Code</span><b>GitHub / public repos</b>
-          <span class="mono">Record</span><b>RDCA / Destroyers CC</b>
-          <span class="mono">Branch</span><b>Stargaze</b>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="pg-section" aria-labelledby="err-note" data-motion="prose" data-motion-n="11" data-dir="right">
-    <div class="wrap">
-      <div class="pg-head">
-        <div>
-          <h2 id="err-note" style="margin-top:1rem;">A note on<br><em>the 404.</em></h2>
-        </div>
-        <p>This page is part of the site, not a dead end.</p>
-      </div>
-      <div class="pg-prose">
-        <p>A 404 is a routing failure, not a moral one. The useful response is to make the next step obvious: the menu, the main routes and a way to report the miss. That is what this page tries to do.</p>
-        <p>If you find a route that should exist and does not, the contact page is the right place to say so. The site is still small enough that a broken path can be fixed properly.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="pg-section" aria-labelledby="err-sitemap" data-motion="ledger" data-motion-n="12" data-dir="up">
-    <div class="wrap">
-      <div class="pg-head">
-        <div>
-          <h2 id="err-sitemap" style="margin-top:1rem;">The<br><em>sitemap.</em></h2>
-        </div>
-        <p>Every public page in the current build.</p>
-      </div>
-      <div class="pg-ledger">
-        <div class="pg-ledger__row"><span class="mono">01</span><b>Home</b><p>The entry point and the photograph index.</p><a href="index.html">Open ↗</a></div>
-        <div class="pg-ledger__row"><span class="mono">02</span><b>About</b><p>The biography, record and principles.</p><a href="about.html">Open ↗</a></div>
-        <div class="pg-ledger__row"><span class="mono">03</span><b>Work</b><p>The software ledger.</p><a href="work.html">Open ↗</a></div>
-        <div class="pg-ledger__row"><span class="mono">04</span><b>Stargaze</b><p>The software branch.</p><a href="stargaze.html">Open ↗</a></div>
-        <div class="pg-ledger__row"><span class="mono">05</span><b>Cricket</b><p>The career record.</p><a href="cricketer.html">Open ↗</a></div>
-        <div class="pg-ledger__row"><span class="mono">06</span><b>Network</b><p>The public endpoints.</p><a href="network.html">Open ↗</a></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="pg-band" aria-labelledby="err-lost" data-motion="band" data-motion-n="13" data-dir="left">
-    <div class="wrap">
-            <div class="pg-band__grid">
-        <div>
-          <h2 id="err-lost">Still<br><em>lost?</em></h2>
-          <p>Send the address that failed and the page you came from. The route can be fixed at the source instead of leaving another dead end.</p>
-          <a class="pg-btn pg-btn--dark" href="mailto:hkdykk22@gmail.com?subject=Broken%20link">Send a note <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="pg-band__meta">
-          <span class="mono">Email</span><b>hkdykk22@gmail.com</b>
-          <span class="mono">Include</span><b>The failed URL</b>
-          <span class="mono">Also</span><b>The page you came from</b>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<!-- /EXTRA SECTIONS -->
-
+  <p class="status">Error <em>404</em> · Request dispatched · Ball lost</p>
+  <h1>This page took a <b>bouncer</b> and never recovered.</h1>
+  <p class="back"><a href="/">← Back to the home ground</a></p>
 </main>
-
-<footer class="footer">
-  <div class="footer__top">
-    <a class="brand brand--footer" href="index.html">
-      <span class="brand__l1">PRANAV</span><span class="brand__l2">DWIVEDI</span>
-    </a>
-    <div class="footer__cols">
-      <div><span class="mono dim">Explore</span><a href="about.html">About</a><a href="work.html">Work</a><a href="stargaze.html">Stargaze</a><a href="cricketer.html">Cricket</a><a href="network.html">Network</a></div>
-      <div><span class="mono dim">Elsewhere</span><a href="https://github.com/pranav-pramod-dwivedi" target="_blank" rel="noopener">GitHub</a><a href="https://rewa-cricket-division.vercel.app/players/pranav-dwivedi/" target="_blank" rel="noopener">Rewa DCA</a><a href="https://destroyers-rewacricket.pages.dev/players/pranav-dwivedi/" target="_blank" rel="noopener">Destroyers CC</a><a href="https://www.instagram.com/destroyers_rewa" target="_blank" rel="noopener">Instagram</a></div>
-      <div><span class="mono dim">Contact</span><a href="contact.html">Contact</a><a href="mailto:hkdykk22@gmail.com">Email</a><a href="privacy.html">Privacy</a></div>
-    </div>
-  </div>
-  <div class="footer__word" aria-hidden="true">PR4NAV</div>
-  <div class="footer__base">
-    <span class="mono">© 2026 Pranav Dwivedi</span>
-    <a class="mono back-top" href="#top">Back to top ↑</a>
-  </div>
-</footer>
-
-<script src="assets/js/main.js?v=38" defer></script>
-<script src="assets/js/motion.js?v=4" defer></script>
-<script src="assets/js/mobile.js?v=3" defer></script>
+<script>if(location.pathname!=="/404"&&window.history.replaceState)history.replaceState(null,"","/404");</script>
 </body>
 </html>
